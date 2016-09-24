@@ -1,0 +1,41 @@
+<div class="panel panel-default col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2"
+     style="padding-right: 0px;padding-left: 0px;">
+    <!-- Default panel contents -->
+    <div class="panel-heading" style="
+    background: #ECECEC;
+">My Classes
+    </div>
+
+    <!-- Table -->
+    <div ng-if="!class_data.length" style="
+    text-align: center;
+    padding: 10px 10px 10px 10px;
+    font-size: 30px;
+"><b>No Class Found</b>
+    </div>
+    <table ng-if="class_data.length" class="table table-bordered">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Class Name</th>
+            <th>Cost</th>
+            <th>Access Key</th>
+            <th>Day</th>
+            <th>Schedule Date</th>
+            <th>Paid</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="data in class_data">
+            <th scope="row">{{$index + 1}}</th>
+            <td>{{data.class_info.class_name}}</td>
+            <td>{{data.class_info.cost}}</td>
+            <td>{{data.access_key}}</td>
+            <td>{{days[data.class_info.day]|uppercase}}</td>
+            <td>{{data.class_info.schedule_date|date:'medium'}}</td>
+            <td ng-if="data.payment">True</td>
+            <td ng-if="!data.payment">False</td>
+        </tr>
+        </tbody>
+    </table>
+</div>

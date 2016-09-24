@@ -1,0 +1,61 @@
+.ms-fs-40 {
+    font-size: 40px;
+}
+
+label {
+    margin-bottom: 0px !important;
+}
+
+.navbar {
+    border-radius: 0px;
+    margin-bottom: 0px !important;
+}
+
+.text {
+    position: absolute;
+    top: 224px;
+    padding-left: 350px;
+    width: 100%;
+    margin: 0 auto;
+    height: 50px;
+}
+
+.ms-pt-xs {
+    padding-top: 6px;
+}
+
+.ms-m-l {
+    margin: 20px !important;
+}
+
+.ms-pl-s {
+    padding-left: 10px;
+}
+
+.ms-fs-14 {
+    font-size: 14px;
+}
+
+.ms-fs-16 {
+    font-size: 16px;
+}
+
+.ms-fs-24 {
+    font-size: 24px;
+}
+
+.searchborder {
+    border-radius: 20px;
+    border-color: black;
+    min-width: 336px;
+    min-height: 32px;
+
+}
+
+.bradius {
+    border-radius: 15px;
+}
+
+.headerColor {
+    background: #F3F2F2;
+}

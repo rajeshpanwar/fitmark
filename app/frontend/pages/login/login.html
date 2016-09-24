@@ -1,0 +1,120 @@
+<style>
+    /*Registration and Login Page v1
+    ------------------------------------*/
+    .reg-page {
+        color: #555;
+        padding: 30px;
+        background: #fefefe;
+        border: solid 1px #eee;
+        box-shadow: 0 0 3px #eee;
+        margin: 50px;
+    }
+
+    .vegas-background {
+        display: none !important;
+    }
+
+    .vegas-overlay {
+        display: none !important;
+    }
+
+    /*Reg Header*/
+    .reg-header {
+        color: #555;
+        text-align: center;
+        margin-bottom: 35px;
+        border-bottom: solid 1px #eee;
+    }
+
+    .reg-header h2 {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+
+    /*Reg Forms*/
+    .reg-page label {
+        color: #777;
+    }
+</style>
+<div class="row" style="margin-right: 0px">
+    <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2">
+        <div class="reg-header">
+            <h2>Login</h2>
+        </div>
+        <div ng-if="errors.error" class="alert alert-block alert-danger text-center">
+            {{errors.error}}
+        </div>
+        <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+            <div class="well ms-bg-transparent" style="padding-left:5%">
+                <div style="margin-left: 40%;margin-bottom: 5%;"><h4>Login As</h4>
+                </div>
+                <div style="margin-left: 18%;">
+                    <div class="radio-inline">
+                        <label> <input type="radio"
+                                       name="optionsRadios"
+                                       ng-model="fields.type"
+                                       id="optionsRadios1"
+                                       value="fitness_user" checked>
+                            Fitness User
+                        </label>
+                    </div>
+                    <div class="radio-inline">
+                        <label> <input type="radio"
+                                       name="optionsRadios"
+                                       ng-model="fields.type"
+                                       id="optionsRadios2"
+                                       value="instructor">
+                            Instructor </label>
+                    </div>
+                </div>
+                <button type="button"
+                        style="margin-top: 10px;margin-left: 15%;padding-left: 15%;padding-right: 15%;"
+                        class="btn btn-primary btn-sm"
+                        ng-click="facebook_login()"><i
+                        class="fa fa-facebook fa-lg">&nbsp;&nbsp;</i>Login
+                    with Facebook
+                </button>
+                <div style="width: 100%; height: 20px;margin-top:10%;  border-bottom: 1px solid black; text-align: center">
+                      <span style="font-size: 25px; background-color: #F3F5F6; padding: 0 10px;">
+                        Or
+                      </span>
+                </div>
+                <div style="margin-left: 25%;margin-top:10%;margin-bottom: 10%;"><h4>Login As Gym Owner</h4>
+                </div>
+                <form role="form" ng-submit="login()">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="email"><b>Email</b> <span class="color-red">*</span></label>
+                                <input type="text" name="email"
+                                       class="form-control" id="email"
+                                       placeholder="Email"
+                                       ng-model="fields.email"/>
+                                <span style="color:#F30B39" class="error"
+                                      ng-show="errors.email">{{errors.email}}</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="password"><b>Password</b> <span class="color-red">*</span></label>
+                                <input type="password" name="password"
+                                       class="form-control" id="password"
+                                       placeholder="Password"
+                                       ng-model="fields.password"/>
+                                <span style="color:#F30B39" class="error"
+                                      ng-show="errors.password">{{errors.password}}</span>
+                            </div>
+                        </div>
+                        <div class="col-sm-11 text-left form-group">
+                            <button
+                                    class="ms-ml-m btn btn-primary" type="submit"> Login
+                            </button>
+
+                        </div>
+                        <div class="col-sm-11 text-left form-group">
+                            <a ui-sref="register">Create an account? Sign up</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,89 @@
+<style>
+    /*Registration and Login Page v1
+    ------------------------------------*/
+    .reg-page {
+        color: #555;
+        padding: 30px;
+        background: #fefefe;
+        border: solid 1px #eee;
+        box-shadow: 0 0 3px #eee;
+        margin: 50px;
+    }
+
+    .vegas-background {
+        display: none !important;
+    }
+
+    .vegas-overlay {
+        display: none !important;
+    }
+
+    /*Reg Header*/
+    .reg-header {
+        color: #555;
+        text-align: center;
+        margin-bottom: 35px;
+        border-bottom: solid 1px #eee;
+    }
+
+    .reg-header h2 {
+        font-size: 24px;
+        margin-bottom: 15px;
+    }
+
+    /*Reg Forms*/
+    .reg-page label {
+        color: #777;
+    }
+</style>
+<div class="row" style="margin-right: 0px">
+    <div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2">
+        <div class="reg-header">
+            <h2>Register</h2>
+        </div>
+        <div ng-if="errors.error" class="alert alert-block alert-danger text-center">
+            {{errors.error}}
+        </div>
+        <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+            <div class="well ms-bg-transparent" style="padding-left:5%">
+                <form role="form" ng-submit="register()">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <div class="form-group">
+                                <label for="mobile_number"><b>Mobile Number</b> <span class="color-red">*</span></label>
+                                <input type="text" name="mobile_number"
+                                       class="form-control" id="mobile_number"
+                                       placeholder="Mobile Number"
+                                       ng-model="fields.mobile_number"/>
+                                <span style="color:#F30B39" class="error"
+                                      ng-show="errors.mobile_number">{{errors.mobile_number}}</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="bio"><b>Bio</b> <span class="color-red">*</span></label>
+                                <textarea class="form-control" rows="5" id="bio" ng-model="fields.bio"></textarea>
+                                <span style="color:#F30B39" class="error"
+                                      ng-show="errors.bio">{{errors.bio}}</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="payment"><b>Payment</b> <span class="color-red">*</span></label>
+                                <select class="form-control" id="payment" ng-model="fields.payout_method">
+                                    <option value="">--Select Payment Method--</option>
+                                    <option value="braintree">BrainTree Payment</option>
+                                    <option value="credit_card">Credit Card</option>
+                                </select>
+                                <span style="color:#F30B39" class="error"
+                                      ng-show="errors.payout_method">{{errors.payout_method}}</span>
+                            </div>
+                        </div>
+                        <div class="col-sm-11 text-left form-group">
+                            <button
+                                    class="ms-ml-m btn btn-primary" type="submit"> Submit
+                            </button>
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,51 @@
+<style>
+    .btn {
+        padding: 2px 10px;
+    }
+</style>
+<div class="panel panel-default col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2"
+     style="padding-right: 0px;padding-left: 0px;">
+    <!-- Default panel contents -->
+    <div class="panel-heading" style="
+    background: #ECECEC;
+">History
+    </div>
+
+    <!-- Table -->
+    <div ng-if="!history_data.length" style="
+    text-align: center;
+    padding: 10px 10px 10px 10px;
+    font-size: 30px;
+"><b>No Gym Found</b>
+    </div>
+    <table ng-if="history_data.length" class="table table-bordered">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Gym Name</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Phone</th>
+            <th>Cost</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="data in history_data">
+            <td scope="row">{{$index + 1}}</td>
+            <td>{{data.name}}</td>
+            <td>{{data.email}}</td>
+            <td>{{data.address}}</td>
+            <td>{{data.phone}}</td>
+            <td>{{data.cost}}</td>
+            <td>
+                <a class="btn btn-success" ng-href="/gym_history/{{data._id}}/_view" data-toggle="tooltip"
+                   data-placement="right"
+                   title="View Gym Data"><i
+                        class="ace-icon fa fa-eye bigger-120"></i>
+                </a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,39 @@
+<div style="width:80%;margin-left:10%;border:5px groove #0d8a62;padding:15px;">
+    <form class="form-inline" style="text-align: center;">
+        <div class="row" style="margin: 1% 0 2% 5%;">
+            <div class="form-group col-sm-6">
+                <label for="exampleInputName2">Class Name:</label>
+                <span id="exampleInputName2">{{class_info.class_name|uppercase}}</span>
+            </div>
+            <div class="form-group col-sm-6">
+                <label for="exampleInputName3">Cost:</label>
+                <span id="exampleInputName3">{{class_info.cost}}</span>
+            </div>
+        </div>
+        <div class="row" style="margin: 1% 0 2% 5%;">
+            <div class="form-group col-sm-6">
+                <label for="exampleInputName4">Description:</label>
+                <span id="exampleInputName4">{{class_info.description}}</span>
+            </div>
+            <div class="form-group col-sm-6">
+                <label for="exampleInputName5">Class Duration:</label>
+                <span id="exampleInputName5">{{class_info.duration}} hours</span>
+            </div>
+        </div>
+        <div class="row" style="margin: 1% 0 2% 5%;">
+            <div class="form-group col-sm-6">
+                <label for="exampleInputName6">Class Start Time:</label>
+                <span id="exampleInputName6">{{class_info.class_start_time}}</span>
+            </div>
+            <div class="form-group col-sm-6">
+                <label for="exampleInputName7">Day:</label>
+                <span id="exampleInputName7">{{days[class_info.duration]| uppercase}}</span>
+            </div>
+        </div>
+        <div class="row" style="margin: 1% 0 0 5%;">
+            <div class="col-sm-12">
+                <button ng-click="book_class()" class="btn btn-success">Book Class</button>
+            </div>
+        </div>
+    </form>
+</div>

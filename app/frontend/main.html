@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="fragment" content="!"/>
+    <meta name="description" content="overview &amp; stats"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <title>Fitmart</title>
+    <script src="/important_files/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/important_files/font-awesome.css"/>
+    <script src="/important_files/angular-ui-router-0.0.1.min.js"></script>
+    <script src="/js/mcms/main.js"></script>
+    <script src="/user/info.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=&sensor=true"></script>
+    <script>
+        function show_class(_id, instructor_class) {
+            if (!instructor_class) {
+                location.href = window.location.origin + '/gym/' + _id;
+            } else {
+                location.href = window.location.origin + '/class/' + _id;
+            }
+        }
+    </script>
+    <style>
+        .loading {
+            z-index: 10000;
+            width: 100px;
+            height: 100px;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+    </style>
+</head>
+<body ng-controller="mainCtrl">
+<div class="loading btn btn-success" style="border-radius: 6px;" ng-show="pendingRequest">
+    <i class="fa fa-spinner fa-spin fa-5x white"> </i>
+</div>
+<div ui-view></div>
+</body>
+</html>

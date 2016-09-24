@@ -1,0 +1,37 @@
+<div class="panel panel-default col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2"
+     style="padding-right: 0px;padding-left: 0px;">
+    <!-- Default panel contents -->
+    <div class="panel-heading" style="
+    background: #ECECEC;
+">My Gym
+    </div>
+
+    <!-- Table -->
+    <div ng-if="!gym_data.length" style="
+    text-align: center;
+    padding: 10px 10px 10px 10px;
+    font-size: 30px;
+"><b>No Gym Found</b>
+    </div>
+    <table ng-if="gym_data.length" class="table table-bordered">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Gym Name</th>
+            <th>Cost</th>
+            <th>Access Key</th>
+            <th>Paid</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="data in gym_data">
+            <th scope="row">{{$index + 1}}</th>
+            <td>{{data.gym_info.name}}</td>
+            <td>{{data.gym_info.cost}}</td>
+            <td>{{data.access_key}}</td>
+            <td ng-if="data.payment">True</td>
+            <td ng-if="!data.payment">False</td>
+        </tr>
+        </tbody>
+    </table>
+</div>

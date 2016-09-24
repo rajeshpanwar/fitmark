@@ -1,0 +1,88 @@
+<style>
+    .btn {
+        padding: 2px 10px;
+    }
+</style>
+<div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2"
+     style="text-align:right;margin-bottom:2%" ng-if="!showEdit">
+    <button class="btn btn-success" ng-click="showEditForm()">Edit Profile</button>
+</div>
+<div class="panel panel-default col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2"
+     style="padding-right: 0px;padding-left: 0px;">
+    <div class="panel-heading" style="
+    background: #ECECEC;
+">
+        <span>My Profile</span>
+    </div>
+
+    <form class="form-horizontal" style="margin: 2%;" ng-if="!showEdit">
+        <div class="form-group">
+            <label for="input1" class="col-sm-2 control-label">Name</label>
+            <div class="col-sm-10" style="text-align:left">
+                <input type="text" class="form-control well" id="input1"
+                       value="{{nv.user.first_name +' ' +nv.user.last_name}}" readonly>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="input3" class="col-sm-2 control-label">Email</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control well" id="input3" value="{{nv.user.email}}" readonly>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="input4" class="col-sm-2 control-label">First Name</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control well" id="input4" value="{{nv.user.first_name}}"
+                       readonly>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="input4" class="col-sm-2 control-label">Last Name</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control well" id="input4" value="{{nv.user.last_name}}"
+                       readonly>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="input4" class="col-sm-2 control-label">Gender</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control well" id="input4" value="{{nv.user.gender}}"
+                       readonly>
+            </div>
+        </div>
+    </form>
+    <form class="form-horizontal" ng-submit="saveUserProfile()" style="margin: 2%;" ng-if="showEdit">
+        <div class="form-group">
+            <label for="input3" class="col-sm-2 control-label">Email</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control well" id="input3" value="{{nv.user.email}}" readonly>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="input4" class="col-sm-2 control-label">First Name</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="input4" ng-model="data.first_name">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="input4" class="col-sm-2 control-label">Last Name</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="input4" ng-model="data.last_name">
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="input4" class="col-sm-2 control-label">Gender</label>
+            <div class="col-sm-10">
+                <select class="form-control" ng-model="data.gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-success">Save</button>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,12 @@
+<div ng-if="error" class="alert alert-block alert-warning text-center">
+    {{error}}
+</div>
+<div class="col-sm-8 col-sm-offset-1 input-group" style="margin-bottom: 2%;margin-left:10%">
+    <input type="text" class="form-control" placeholder="Search for Classes..." ng-model="searchText">
+      <span class="input-group-btn">
+        <button class="btn btn-success" ng-click="search()" type="button">Search</button>
+      </span>
+</div>
+<div id="map" style="margin-left:10%;width: 78%;height: 600px;"></div>
+<!--
+<div ng-if="mobileView" id="map" style="margin-left:10%;width: 20%;height: 500px;"></div>-->

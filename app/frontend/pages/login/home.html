@@ -1,0 +1,198 @@
+<div class="navbar navbar-inverse navbar-fixed-top scrollclass">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">FITMARK</a>
+        </div>
+        <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="" ng-click="route_login()">Become an Instructor</a></li>
+                <li><a href="" ng-click="route_register()">Register Gym</a></li>
+                <li><a href="" ng-click="route_login()">Login</a></li>
+            </ul>
+        </div>
+
+    </div>
+</div>
+
+
+<!--HOME SECTION-->
+<div class="container" id="home">
+    <div class="row text-center scrollclass">
+        <div class="col-md-12">
+            <span class="head-main">FitMark</span>
+            <h3 class="head-last">Don't let Gym Memberships Limit You</h3>
+
+        </div>
+    </div>
+</div>
+<!--END HOME SECTION-->
+
+<!--ABOUT SECTION/ How it workss-->
+<section class="for-full-back color-bg-one" id="about">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-8 col-md-offset-2 ">
+                <h1>How it Works</h1>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-8 col-md-offset-2 ">
+                    <h5>
+
+
+                    </h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="for-full-back color-white" id="about-team">
+    <div class="container">
+        <div class="row text-center g-pad-bottom">
+            <div class="col-md-8 col-md-offset-2 ">
+
+            </div>
+
+        </div>
+        <div id="new_dev">
+            <Section id="main_section">
+                <div class="para_one">
+                    <h2>Create More Business</h2>
+
+                    <p>Bringing Business to Gyms and Fitness Shops alike <br>
+                        We are redefining the norms of the Fitness Shop/Gym <br>
+                        business model. In result this will bring more business <br>
+                        to smaller shops.</p>
+                </div>
+
+                <div class="para_two">
+                    <h2>Instructors</h2>
+                    <p>Make Money being an Instructor FitMark <br>
+                        can bring more business your Yogo Studio.<br>
+                        Or if you don't have a studio Now you can have a<br>
+                        class at the beach, park or anywhere you like.</p>
+                </div>
+
+                <div class="para_three">
+                    <h2>Working-Out With FitMark</h2>
+                    Working out with FitMark You are paying for a Gym membership<br>
+                    whether you are their or not, so why not pay as you go,<br>
+                    get a better experience being with true experts and not <br>
+                    have any limits.
+                </div>
+
+            </section>
+        </div>
+
+
+        <div class="row text-center g-pad-bottom">
+
+
+        </div>
+        <div font-size:100% class="col-md-3 col-sm-3 col-xs-6">
+            <div class="alert alert-success">
+                <h1>fhfghfhgf</h1> Bringing Business to Gyms and Fitness Shops alike
+                We are redefining the norms of the Fitness Shop/Gym business model.
+                In result this will bring more business to smaller shops.
+            </div>
+            <div class="team-member">
+
+
+            </div>
+
+
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-6">
+            <div class="alert alert-warning">
+                Make Money being an Instructor
+                FitMark can bring more business your Yogo Studio. Or if you don't have a
+                studio Now you can have a class at the beach, park or anywhere you like.
+            </div>
+            <div class="team-member">
+
+
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-3 col-xs-6">
+            <div class="alert alert-info">
+                Working out with FitMark
+                You are paying for a Gym membership whether you are their or not,
+                so why not pay as you go, get a better experience being with true experts and not have any limits.
+            </div>
+            <div class="team-member">
+
+
+            </div>
+        </div>
+    </div>
+    </div>
+</section>
+<section class="for-full-back color-bg-one" id="contact">
+    <div class="container">
+        <div class="row text-center">
+            <div class="col-md-8 col-md-offset-2 ">
+                <h1>Contact</h1>
+            </div>
+            <div class="row text-center">
+                <div class="col-md-8 col-md-offset-2 ">
+                    <h5>
+                        XXX.
+
+                    </h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="for-full-back color-white text-center" id="contact-inner">
+    <div class="container">
+        <h1>GET IN TOUCH</h1>
+        <form>
+            <div class="row">
+                <div ng-if="messageSend" class="alert alert-block alert-success text-center">
+                    Thank you for contacting us. We get back you soon.
+                </div>
+
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <input type="text" class="form-control" required="required" ng-model="data.name"
+                               placeholder="Name">
+                        <span style="color:#F30B39" class="error"
+                              ng-show="errors.name">{{errors.name}}</span>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="form-group">
+                        <input type="email" class="form-control" required="required" ng-model="data.email"
+                               placeholder="Email address">
+                        <span style="color:#F30B39" class="error"
+                              ng-show="errors.email">{{errors.email}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 col-sm-12">
+                    <div class="form-group">
+                        <textarea name="message" id="message" required="required" ng-model="data.message"
+                                  class="form-control"
+                                  style="min-height:200px;" placeholder="Message"></textarea>
+                        <span style="color:#F30B39" class="error"
+                              ng-show="errors.message">{{errors.message}}</span>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" ng-click="sendEnquiry()" class="btn btn-primary btn-lg">Submit Request
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+<div class="for-full-back" id="footer">
+    2016 Fitmark.social | All Right Reserved | by: <a href="" target="_blank" style="color:#fff">Fitmark.social</a>
+
+</div>

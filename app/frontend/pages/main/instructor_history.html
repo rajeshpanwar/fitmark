@@ -1,0 +1,46 @@
+<style>
+    .btn {
+        padding: 2px 10px;
+    }
+</style>
+<div class="panel panel-default col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2"
+     style="padding-right: 0px;padding-left: 0px;">
+    <!-- Default panel contents -->
+    <div class="panel-heading" style="
+    background: #ECECEC;
+">History
+    </div>
+
+    <!-- Table -->
+    <div ng-if="!history_data.length" style="
+    text-align: center;
+    padding: 10px 10px 10px 10px;
+    font-size: 30px;
+"><b>No User Found</b>
+    </div>
+    <table ng-if="history_data.length" class="table table-bordered">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>User Name</th>
+            <th>Email</th>
+            <th>Gender</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="data in history_data">
+            <td scope="row">{{$index + 1}}</td>
+            <td>{{data.first_name}}</td>
+            <td>{{data.email}}</td>
+            <td>{{data.gender}}</td>
+            <td>
+                <a class="btn btn-success" ng-href="/history/{{data._id}}/_view" data-toggle="tooltip" data-placement="right"
+                   title="View Classes Data"><i
+                        class="ace-icon fa fa-eye bigger-120"></i>
+                </a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>

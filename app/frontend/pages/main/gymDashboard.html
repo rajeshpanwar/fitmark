@@ -1,0 +1,35 @@
+<div class="panel panel-default col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2"
+     style="padding-right: 0px;padding-left: 0px;">
+    <!-- Default panel contents -->
+    <div class="panel-heading" style="background: #ECECEC;">Attendees List</div>
+
+    <!-- Table -->
+    <div ng-if="!gym_data.length" style="
+    text-align: center;
+    padding: 10px 10px 10px 10px;
+    font-size: 30px;
+"><b>No Attendee</b>
+    </div>
+    <table ng-if="gym_data.length" class="table table-bordered">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Access Key</th>
+            <th>Valid Till</th>
+            <th>Attendee Name</th>
+            <th>Attendee Email</th>
+            <th>Paid</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="data in gym_data">
+            <td scope="row">{{$index + 1}}</td>
+            <td>{{data.access_key}}</td>
+            <td>{{data.valid_till|date:'medium'}}</td>
+            <td>{{data.user_info.first_name}}</td>
+            <td>{{data.user_info.email}}</td>
+            <td>True</td>
+        </tr>
+        </tbody>
+    </table>
+</div>

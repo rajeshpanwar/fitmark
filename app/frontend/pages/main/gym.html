@@ -1,0 +1,38 @@
+<div ng-if="payment_error" class="alert alert-block alert-warning text-center">
+    {{payment_error}}
+</div>
+<div style="width:80%;margin-left:10%;border:5px groove #0d8a62;padding:15px;">
+    <form class="form-inline" style="text-align: center;">
+        <div class="row" style="margin: 1% 0 2% 5%;">
+            <div class="form-group col-sm-6">
+                <label for="exampleInputName2">Gym Name:</label>
+                <span id="exampleInputName2">{{gym_info.name|uppercase}}</span>
+            </div>
+            <div class="form-group col-sm-6">
+                <label for="exampleInputName3">Cost:</label>
+                <span id="exampleInputName3">{{gym_info.cost}}</span>
+            </div>
+        </div>
+        <div class="row" style="margin: 1% 0 2% 5%;">
+            <div class="form-group col-sm-6">
+                <label for="exampleInputName4">Description:</label>
+                <span id="exampleInputName4">{{gym_info.description}}</span>
+            </div>
+            <div class="form-group col-sm-6">
+                <label for="exampleInputName5">Email:</label>
+                <span id="exampleInputName5">{{gym_info.email}}</span>
+            </div>
+        </div>
+        <div class="row" style="margin: 1% 0 2% 5%;">
+            <div class="form-group col-sm-6">
+                <label for="exampleInputName6">Address:</label>
+                <span id="exampleInputName6">{{gym_info.address}}</span>
+            </div>
+        </div>
+        <div class="row" style="margin: 1% 0 0 5%;">
+            <div class="col-sm-12">
+                <button ng-click="book_gym()" class="btn btn-success">Book Gym</button>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,154 @@
+<style>
+
+    .nav-pills > li > a:hover {
+        color: #fff;
+        background-color: #096648;
+    }
+
+    .nav-pills > li.active > a:hover {
+        color: #fff;
+        background-color: #0d8a62;
+    }
+
+    .nav-pills > li.active > a, .nav-pills > li.active > a:focus, .nav-pills > li.active > a:hover {
+        color: #fff;
+        background-color: #096648;
+    }
+
+    .navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:focus, .navbar-inverse .navbar-nav > .active > a:hover {
+        color: #fff;
+        background-color: #096648;
+    }
+
+    .navbar-inverse .navbar-nav > li > a {
+        color: #fff;
+    }
+
+    .navbar-inverse .navbar-toggle:hover {
+        background-color: #0d8a62;
+    }
+
+    .navbar-brand {
+        color: #fff !important;
+    }
+
+    a {
+        color: #fff
+    }
+
+    .nav-header {
+        padding: 33px 25px
+    }
+
+    .block {
+        display: block;
+        margin-top: 15%;
+    }
+
+    .nav > li > a i {
+        margin-right: 6px;
+    }
+</style>
+<div>
+
+    <!-- Nav tabs -->
+    <div class="container-fluid hidden-xs">
+        <div class="row">
+            <div class=""
+                 style="background-color:#0d8a62;position: fixed;top: 0;bottom: 0;z-index: 111;width: 20%;overflow-x: auto;overflow-y: auto;">
+                <div>
+                    <ul class="nav nav-pills nav-stacked" style="padding: 10px 10px 10px 10px;">
+                        <li class="nav-header">
+                            <div class="dropdown profile-element">
+                                <div><span class="ms-m-0 ng-scope">
+
+                        <img style="max-height: 80px;" ng-if="nv.user.image" alt="image" class="img-circle"
+                             data-ng-src="{{nv.user.image}}">
+                                    <img ng-if="!nv.user.image" alt="image" style="max-height: 80px;" class="img-circle"
+                                         data-ng-src="http://blogtimenow.com/wp-content/uploads/2014/06/hide-facebook-profile-picture-notification.jpg">
+
+                </span>
+                                    <span class="clear">
+
+
+                                <span class="block">
+                                    <strong style="color:white;" class="ng-binding">{{nv.user.name|uppercase}}
+
+                                    </strong>
+                                    <!-- ngIf: !records[0].first_name -->
+
+                                </span>
+                                        <!--<span ng-repeat="data in ms.user.customer_groups" class="text-muted text-xs block">
+                                             <span>{{data | ms_ucfirst}}</span>
+
+                                        </span>-->
+                            </span>
+
+
+                                </div>
+                            </div>
+                        </li>
+                        <hr style="color:black">
+                        <li class="active"><a data-toggle="tab" data-target="#dashboard" ui-sref=".dashboard"><i
+                                class="fa fa-home"></i>Dashboard</a>
+                        </li>
+                        <li><a data-toggle="tab" data-target="#profile" ui-sref=".profile"><i
+                                class="fa fa-user"></i>Profile</a></li>
+                        <li><a data-toggle="tab" data-target="#payout" ui-sref=".payout"><i class="fa fa-user-md"></i>Payout</a>
+                        </li>
+                        <li><a data-toggle="tab" data-target="#history" ui-sref=".history"><i class="fa fa-history"></i>History</a>
+                        </li>
+                        <li><a data-toggle="tab" data-target="#logout" ui-sref=".logout"><i class="fa fa-sign-out"></i>Log
+                            out</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+            <div class="tab-content " style="margin-left:20%">
+                <ol class="breadcrumb" style="text-align: center;padding: 20px;background:#ECECEC">
+                    <li class="active" style="color: #424040;"><b>Welcome To Fitmark Dashboard</b></li>
+                </ol>
+                <div ui-view></div>
+            </div>
+        </div>
+    </div>
+    <div class="visible-xs">
+        <nav class="navbar navbar-inverse" style="background-color:#0d8a62;">
+            <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                            data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand">Welcome To Fitmark Dashboard</a>
+                </div>
+
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
+                        <li class="active"><a data-toggle="tab" data-target="#dashboard" ui-sref=".dashboard"><i
+                                class="fa fa-home"></i>Dashboard</a>
+                        </li>
+                        <li><a data-toggle="tab" data-target="#profile" ui-sref=".profile"><i
+                                class="fa fa-user"></i>Profile</a></li>
+                        <li><a data-toggle="tab" data-target="#payout" ui-sref=".payout"><i class="fa fa-user-md"></i>Payout</a>
+                        </li>
+                        <li><a data-toggle="tab" data-target="#history" ui-sref=".history"><i class="fa fa-history"></i>History</a>
+                        </li>
+                        <li><a data-toggle="tab" data-target="#logout" ui-sref=".logout"><i class="fa fa-sign-out"></i>Log
+                            out</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="container">
+            <div ui-view></div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,42 @@
+<style>
+    .btn {
+        padding: 2px 10px;
+    }
+</style>
+<div class="panel panel-default col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2"
+     style="padding-right: 0px;padding-left: 0px;">
+    <!-- Default panel contents -->
+    <div class="panel-heading" style="
+    background: #ECECEC;
+">User List
+    </div>
+
+    <!-- Table -->
+    <div ng-if="!class_data.length" style="
+    text-align: center;
+    padding: 10px 10px 10px 10px;
+    font-size: 30px;
+"><b>No User Found</b>
+    </div>
+    <table ng-if="class_data.length" class="table table-bordered">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Access Key</th>
+            <th>User Name</th>
+            <th>User Email</th>
+            <th>Payment</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="data in class_data">
+            <td scope="row">{{$index + 1}}</td>
+            <td>{{data.access_key}}</td>
+            <td>{{data.user_info.first_name +' '+data.user_info.last_name}}</td>
+            <td>{{data.user_info.email}}</td>
+            <td ng-if="data.payment">True</td>
+            <td ng-if="!data.payment">False</td>
+        </tr>
+        </tbody>
+    </table>
+</div>

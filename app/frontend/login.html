@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="fragment" content="!"/>
+    <meta name="description" content="overview &amp; stats"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <base href=""/>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+    <!--<link rel="stylesheet" href="./important_files/font-awesome.css"/>-->
+    <script src="/important_files/angular.js"></script>
+    <title>Fitmart</title>
+    <link href="/assets/css/style.css" rel="stylesheet"/>
+    <script src="/js/mcms/login.js"></script>
+    <script src="/user/info.js"></script>
+    <script src="/important_files/angular-ui-router-0.0.1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <script src="app/frontend/assets/plugins/vegas/jquery.vegas.min.js"></script>
+    <script src="app/frontend/assets/plugins/jquery.easing.min.js"></script>
+    <script src="app/frontend/assets/js/custom.js"></script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=">
+    </script>
+    <link rel="stylesheet" type="text/css" href="/css/mycss.css">
+    <style>
+        .loading {
+            z-index: 10000;
+            width: 100px;
+            height: 100px;
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+    </style>
+</head>
+<body ng-controller="loginCtrl">
+<div class="loading btn btn-success" style="border-radius: 6px;" ng-show="pendingRequest">
+    <i class="fa fa-spinner fa-spin fa-5x white"> </i>
+</div>
+<div ng-show="show_header" ng-include="'header.html'"></div>
+<div ui-view></div>
+<div ng-show="show_header" ng-include="'footer.html'"></div>
+</body>
+</html>

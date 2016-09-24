@@ -1,0 +1,330 @@
+<style>
+    .btn {
+        padding: 2px 10px;
+    }
+</style>
+<div ng-if="errors.error" class="alert alert-block alert-warning text-center">
+    {{errors.error}}
+</div>
+<div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2"
+     style="padding-right: 0px;padding-left: 0px;text-align:right;margin-bottom:2%" ng-if="!showEdit">
+    <button class="btn btn-success" ng-click="showEditForm()">Edit Profile</button>
+</div>
+<div class="panel panel-default col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2"
+     style="padding-right: 0px;padding-left: 0px;">
+    <div class="panel-heading" style="
+    background: #ECECEC;
+">
+        <span>My Profile</span>
+    </div>
+
+    <form class="form-horizontal" style="margin: 2%;" ng-if="!showEdit">
+        <div class="form-group">
+            <label for="input1" class="col-sm-2 control-label">Gym Name</label>
+            <div class="col-sm-10" style="text-align:left">
+                <input type="text" class="form-control well" id="input1" value="{{nv.user.name}}" readonly>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="input3" class="col-sm-2 control-label">Phone Number</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control well" id="input3" value="{{nv.user.phone}}" readonly>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="input4" class="col-sm-2 control-label">Working Days</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control well" id="input4" value="{{working_days}}"
+                       readonly>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="input5" class="col-sm-2 control-label">Cost</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control well" id="input5" value="{{nv.user.cost}}"
+                       readonly>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="input6" class="col-sm-2 control-label">Description</label>
+            <div class="col-sm-10">
+                <textarea class="form-control" rows="5" id="input6" readonly>{{nv.user.description}}</textarea>
+            </div>
+        </div>
+    </form>
+    <form class="form-horizontal" style="margin: 2%;" ng-if="showEdit" ng-submit="submitForm()">
+        <div class="form-group">
+            <label for="input1" class="col-sm-2 control-label">Gym Name</label>
+            <div class="col-sm-10" style="text-align:left">
+                <input type="text" class="form-control" id="input1" ng-model="data.name">
+                 <span style="color:#F30B39" class="error"
+                       ng-show="errors.name">{{errors.name}}</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="input3" class="col-sm-2 control-label">Phone Number</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="input3"
+                       ng-model="data.phone">
+                <span style="color:#F30B39" class="error"
+                      ng-show="errors.phone">{{errors.phone}}</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="input4" class="col-sm-2 control-label">Working Days</label>
+            <div class="col-sm-10">
+                <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true"
+                     style="margin-bottom: 0px">
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingOne">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse"
+                                   data-parent="#accordion" href="#collapseOne" aria-expanded="false"
+                                   aria-controls="collapseOne">
+                                    Monday
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse" role="tabpanel"
+                             aria-labelledby="headingTwo">
+                            <div class="panel-body">
+                                <div class="row" style="margin: 10px;">
+                                    <label for="input5" class="col-sm-4 control-label">Start
+                                        Time</label>
+                                    <div class="col-sm-8">
+                                        <input type="time" class="form-control" id="input5"
+                                               ng-model="data.monday.start_time">
+                                    </div>
+                                </div>
+                                <div class="row" style="margin: 10px;">
+                                    <label for="input6" class="col-sm-4 control-label">End
+                                        Time</label>
+                                    <div class="col-sm-8">
+                                        <input type="time" class="form-control" id="input6"
+                                               ng-model="data.monday.end_time">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingTwo">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse"
+                                   data-parent="#accordion" href="#collapseTwo" aria-expanded="false"
+                                   aria-controls="collapseTwo">
+                                    Tuesday
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel"
+                             aria-labelledby="headingTwo">
+                            <div class="panel-body">
+                                <div class="row" style="margin: 10px;">
+                                    <label for="input7" class="col-sm-4 control-label">Start
+                                        Time</label>
+                                    <div class="col-sm-8">
+                                        <input type="time" class="form-control" id="input7"
+                                               ng-model="data.tuesday.start_time">
+                                    </div>
+                                </div>
+                                <div class="row" style="margin: 10px;">
+                                    <label for="input8" class="col-sm-4 control-label">End
+                                        Time</label>
+                                    <div class="col-sm-8">
+                                        <input type="time" class="form-control" id="input8"
+                                               ng-model="data.tuesday.end_time">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingThree">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse"
+                                   data-parent="#accordion" href="#collapseThree" aria-expanded="false"
+                                   aria-controls="collapseThree">
+                                    Wednesday
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseThree" class="panel-collapse collapse" role="tabpanel"
+                             aria-labelledby="headingThree">
+                            <div class="panel-body">
+                                <div class="row" style="margin: 10px;">
+                                    <label for="input9" class="col-sm-4 control-label">Start
+                                        Time</label>
+                                    <div class="col-sm-8">
+                                        <input type="time" class="form-control" id="input9"
+                                               ng-model="data.wednesday.start_time">
+                                    </div>
+                                </div>
+                                <div class="row" style="margin: 10px;">
+                                    <label for="input10" class="col-sm-4 control-label">End
+                                        Time</label>
+                                    <div class="col-sm-8">
+                                        <input type="time" class="form-control" id="input10"
+                                               ng-model="data.wednesday.end_time">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingFour">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse"
+                                   data-parent="#accordion" href="#collapseFour" aria-expanded="false"
+                                   aria-controls="collapseFour">
+                                    Thursday
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseFour" class="panel-collapse collapse" role="tabpanel"
+                             aria-labelledby="headingThree">
+                            <div class="panel-body">
+                                <div class="row" style="margin: 10px;">
+                                    <label for="input11" class="col-sm-4 control-label">Start
+                                        Time</label>
+                                    <div class="col-sm-8">
+                                        <input type="time" class="form-control" id="input11"
+                                               ng-model="data.thursday.start_time">
+                                    </div>
+                                </div>
+                                <div class="row" style="margin: 10px;">
+                                    <label for="input12" class="col-sm-4 control-label">End
+                                        Time</label>
+                                    <div class="col-sm-8">
+                                        <input type="time" class="form-control" id="input12"
+                                               ng-model="data.thursday.end_time">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingFive">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse"
+                                   data-parent="#accordion" href="#collapseFive" aria-expanded="false"
+                                   aria-controls="collapseFive">
+                                    Friday
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseFive" class="panel-collapse collapse" role="tabpanel"
+                             aria-labelledby="headingThree">
+                            <div class="panel-body">
+                                <div class="row" style="margin: 10px;">
+                                    <label for="input13" class="col-sm-4 control-label">Start
+                                        Time</label>
+                                    <div class="col-sm-8">
+                                        <input type="time" class="form-control" id="input13"
+                                               ng-model="data.friday.start_time">
+                                    </div>
+                                </div>
+                                <div class="row" style="margin: 10px;">
+                                    <label for="input14" class="col-sm-4 control-label">End
+                                        Time</label>
+                                    <div class="col-sm-8">
+                                        <input type="time" class="form-control" id="input14"
+                                               ng-model="data.friday.end_time">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingSix">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse"
+                                   data-parent="#accordion" href="#collapseSix" aria-expanded="false"
+                                   aria-controls="collapseSix">
+                                    Saturday
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseSix" class="panel-collapse collapse" role="tabpanel"
+                             aria-labelledby="headingThree">
+                            <div class="panel-body">
+                                <div class="row" style="margin: 10px;">
+                                    <label for="input15" class="col-sm-4 control-label">Start
+                                        Time</label>
+                                    <div class="col-sm-8">
+                                        <input type="time" class="form-control" id="input15"
+                                               ng-model="data.saturday.start_time">
+                                    </div>
+                                </div>
+                                <div class="row" style="margin: 10px;">
+                                    <label for="input16" class="col-sm-4 control-label">End
+                                        Time</label>
+                                    <div class="col-sm-8">
+                                        <input type="time" class="form-control" id="input16"
+                                               ng-model="data.saturday.end_time">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingSeven">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse"
+                                   data-parent="#accordion" href="#collapseSeven" aria-expanded="false"
+                                   aria-controls="collapseSeven">
+                                    Sunday
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseSeven" class="panel-collapse collapse" role="tabpanel"
+                             aria-labelledby="headingThree">
+                            <div class="panel-body">
+                                <div class="row" style="margin: 10px;">
+                                    <label for="input17" class="col-sm-4 control-label">Start
+                                        Time</label>
+                                    <div class="col-sm-8">
+                                        <input type="time" class="form-control" id="input17"
+                                               ng-model="data.sunday.start_time">
+                                    </div>
+                                </div>
+                                <div class="row" style="margin: 10px;">
+                                    <label for="input18" class="col-sm-4 control-label">End
+                                        Time</label>
+                                    <div class="col-sm-8">
+                                        <input type="time" class="form-control" id="input18"
+                                               ng-model="data.sunday.end_time">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <span style="color:#F30B39" class="error"
+                      ng-show="errors.select_working_days">{{errors.select_working_days}}</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="input5" class="col-sm-2 control-label">Cost</label>
+            <div class="col-sm-10">
+                <input type="text" class="form-control" id="input5" ng-model="data.cost">
+                <span style="color:#F30B39" class="error"
+                      ng-show="errors.cost">{{errors.cost}}</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="input6" class="col-sm-2 control-label">Description</label>
+            <div class="col-sm-10">
+                <textarea class="form-control" rows="5" id="input6"
+                          ng-model="data.description"></textarea>
+                <span style="color:#F30B39" class="error"
+                      ng-show="errors.description">{{errors.description}}</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-success">Save</button>
+            </div>
+        </div>
+    </form>
+</div>

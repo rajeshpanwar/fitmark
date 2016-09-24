@@ -1,0 +1,57 @@
+<style>
+    .btn {
+        padding: 2px 10px;
+    }
+</style>
+<div class="col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2"
+     style="padding-right: 0px;padding-left: 0px;text-align:right;margin-bottom:2%">
+    <button class="btn btn-success" ui-sref="home.add">Add New Class</button>
+</div>
+<div class="panel panel-default col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2"
+     style="padding-right: 0px;padding-left: 0px;">
+    <!-- Default panel contents -->
+    <div class="panel-heading" style="
+    background: #ECECEC;
+">Classes
+    </div>
+
+    <!-- Table -->
+    <div ng-if="!class_data.length" style="
+    text-align: center;
+    padding: 10px 10px 10px 10px;
+    font-size: 30px;
+"><b>No Class Found</b>
+    </div>
+    <table ng-if="class_data.length" class="table table-bordered">
+        <thead>
+        <tr>
+            <th>#</th>
+            <th>Class Name</th>
+            <th>Cost</th>
+            <th>Day</th>
+            <th>Schedule Date</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="data in class_data">
+            <th scope="row">{{$index + 1}}</th>
+            <td>{{data.class_name}}</td>
+            <td>{{data.cost}}</td>
+            <td>{{days[data.day]|uppercase}}</td>
+            <td>{{data.schedule_date|date:'medium'}}</td>
+            <td>
+                <a class="btn btn-success" ng-href="/class/{{data._id}}"><i
+                        class="ace-icon fa fa-eye bigger-120" data-toggle="tooltip"
+                        data-placement="right"
+                        title="Confirmation Log"></i></a>
+                <a class="btn btn-primary" ng-href="/class/{{data._id}}/_edit"><i
+                        class="ace-icon fa fa-edit bigger-120"></i>
+                </a>
+                <a class="btn btn-danger" ng-click="delete_class(data._id)"><i
+                        class="ace-icon fa fa-trash bigger-120"></i></a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
